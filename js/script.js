@@ -75,7 +75,13 @@ buttonSign.addEventListener('click', function (event) {
 	}
 
 });
-
+document.addEventListener("click", function (e) {
+	const targetElement = e.target;
+	if (!targetElement.closest('.sign__button') && !targetElement.closest('.inputSign')) {
+		inputSign.value = "";
+		inputSign.style.color = '#1A0A03';
+	}
+});
 document.addEventListener("click", function (e) {
 	const targetElement = e.target;
 	if (!targetElement.closest('.contact-footer__button') && !targetElement.closest('.input')) {
@@ -300,7 +306,7 @@ slider.oninput = function () {
 	output.innerHTML = `$` + this.value;
 }
 
-//items
+//items in spoiller choise
 
 document.addEventListener('click', function (e) {
 	const targetElement = e.target;
@@ -572,7 +578,7 @@ if (document.querySelector('.gallary__slider-body')) {
 		observeParents: true,
 		observeSlideChildren: true,
 		slidesPerView: 4,
-		spaceBetween: 30,
+		spaceBetween: 23,
 		watchOverflow: true,
 		speed: 800,
 		loop: false,
